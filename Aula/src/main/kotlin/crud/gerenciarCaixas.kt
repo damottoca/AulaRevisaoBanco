@@ -44,7 +44,7 @@ fun cadastrarCaixa(){
     val altura = readln().toDouble()
 
     println("Cor da caixa: ")
-    val cor = readln().toString()
+    val cor = readln() //por padrão já le como String, não precisa do .toString()
 
     println("Peso da caixa: ")
     val peso = readln().toDouble()
@@ -58,23 +58,41 @@ fun cadastrarCaixa(){
     println("Largura da caixa: ")
     val largura = readln().toDouble()
 
-    println("Interno da caixa: ")
-    val interno = readln().toBoolean()
+    println("Interno da caixa: (1 - sim, 2 - não")
+    val interno = when(readln().toInt()){
+        //Usuario escolhe 1 ou 2 para true ou false. Se for outra coisa, é false
+        //Isso afeta no resultado final, se tem ou não interno da caixa
+        1 -> true
+        2 -> false
+        else -> false
+    }
 
     println("Marca da caixa: ")
-    val marca = readln().toString()
+    val marca = readln() //por padrão já le como String, não precisa do .toString()
 
     println("Tampa da caixa: ")
-    val tampa = readln().toString()
+    val tampa = readln() //por padrão já le como String, não precisa do .toString()
 
-    println("Entrada D'Água: ")
-    val entrada = readln().toBoolean()
+    println("Tem entrada D'Água: (1 - sim, 2 - não)")
+    val entrada = when(readln().toInt()){
+        //Usuario escolhe 1 ou 2 para true ou false. Se for outra coisa, é false
+        //Isso afeta no resultado final, se tem ou não entrada da agua
+        1 -> true
+        2 -> false
+        else -> false
+    }
 
-    println("Saida D'Água: ")
-    val saida = readln().toBoolean()
+    println("Tem saida D'Água: ")
+    val saida =  when(readln().toInt()){
+        //Usuario escolhe 1 ou 2 para true ou false. Se for outra coisa, é false
+        //Isso afeta no resultado final, se tem ou não saida de água
+        1 -> true
+        2 -> false
+        else -> false
+    }
 
     println(" Boia da caixa: ")
-    val boia = readln().toString()
+    val boia = readln() //por padrão já le como String, não precisa do .toString()
 
     //Salvar as variáveis agora dentro da classe
     //Conecte o atributo da classe a variável que o usuario digitou
