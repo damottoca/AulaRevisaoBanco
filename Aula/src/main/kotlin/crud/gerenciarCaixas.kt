@@ -2,8 +2,30 @@ package org.example.crud
 
 import org.example.entidades.CaixaDAgua
 import org.example.enumeradores.Material
+import org.example.org.example.crud.ResulSet
+
 
 fun cadastrarCaixa(){
+        val conectar = EntidadeJDBC(
+            url = "jdbc:postgresql//localhost:5432/aula",
+            usuario = "postgres",
+            senha = "5432"
+    )
+    conectar.conectarComBanco()
+//Coloque o nome da tabela o mesmo nome da entidade
+    val sql = " CREATE TABLE IF NOT EXISTS CaixaDAgua"
+            "(id serial NOT NULL PRIMARY KEY," +
+            "materia varchar(250)," +
+            "capacidade float," +
+            "altura float, " +
+            " largura float," +
+            " profundidade float," +
+            "blablabla varchar (255)"
+           " preco varchar (255)," +
+    ")"
+    val banco = conectar.conectarComBanco()
+    banco!!.createStatement().execute(sql)
+
     /*
     val capacidade : Int,
     val cor : String,
@@ -117,13 +139,18 @@ fun cadastrarCaixa(){
 }
 
 fun editarCaixa(){
-
+println ()
 }
 
 fun listarCaixas(){
-
+    val banco = conectar.conectarComBanco()
+    val sql = "SELECT * FROM CaixaDAgua"
+    val resultados : ResulSet = banco!!.createStatement().executeQuery(sql)
 }
 
-fun excluirCaixa(){
 
+fun excluirCaixa(id : Int){
+val banco = conectar.conectarComBanco()
+    val sqlBusca = "SELECT * FROM CaixaDAgua WHERE id = "
+    val sql = "SELECT * FROM CaixaDAgua WHERE id = "
 }

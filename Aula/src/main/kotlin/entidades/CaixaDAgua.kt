@@ -4,6 +4,7 @@ import org.example.enumeradores.Material
 import java.math.BigDecimal
 
 class CaixaDAgua( //Os 2 parenteses construtor da clsse
+  //  val id : Int,
     val capacidade: Int,
     val cor: String,
     val peso: Double,
